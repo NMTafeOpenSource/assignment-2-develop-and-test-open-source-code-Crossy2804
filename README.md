@@ -1,7 +1,5 @@
-# Assignment2-OSStarterCode
-Starter code for assignment 2 of the Open Source and Testing course.
+# Assignment2
 
-This repository contains the classes for the vehicle rental system.
-You can modify and extend the existing code as well as add new classes to make the application functional and user-friendly.
-The User Interface can be either GUI or console based.
-Git source control must be used to track different versions of the application over time.
+This repository contains a JavaFX FXML appication for the vehicle rental system.
+The user intereacts with a GUI were they can view a list of car available for rent, add a new car, 
+view details about each car and rent a car.
