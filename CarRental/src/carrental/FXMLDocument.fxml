@@ -9,48 +9,65 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="556.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carrental.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="587.0" prefWidth="836.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carrental.FXMLDocumentController">
     <children>
-      <TableView fx:id="vehicleTable" layoutX="14.0" layoutY="89.0" prefHeight="359.0" prefWidth="583.0">
+      <TableView fx:id="vehicleTable" layoutX="14.0" layoutY="89.0" prefHeight="359.0" prefWidth="791.0">
         <columns>
-          <TableColumn fx:id="vehicle" prefWidth="144.0" text="Vehicle">
+          <TableColumn fx:id="Manufacturer" prefWidth="104.0" text="Manufacturer">
            <cellValueFactory>
-                  <PropertyValueFactory property="vehicle" />
+                  <PropertyValueFactory property="manufacturer" />
             </cellValueFactory>
           </TableColumn>
-          <TableColumn prefWidth="106.0" text="Registration No">
+          <TableColumn fx:id="Model" prefWidth="95.0" text="Model">
           <cellValueFactory>
+                  <PropertyValueFactory property="model" />
+            </cellValueFactory>
+          </TableColumn>
+            <TableColumn fx:id="Year" prefWidth="63.0" text="Year">
+            <cellValueFactory>
+                  <PropertyValueFactory property="year" />
+            </cellValueFactory>
+          </TableColumn>
+            <TableColumn fx:id="RegistrationNo" prefWidth="95.0" text="Registration">
+            <cellValueFactory>
                   <PropertyValueFactory property="registrationNo" />
             </cellValueFactory>
           </TableColumn>
-            <TableColumn prefWidth="123.0" text="Total Km Travelled">
+            <TableColumn fx:id="Odemeter" prefWidth="117.0" text="Odemeter Reading">
             <cellValueFactory>
-                  <PropertyValueFactory property="totalKm" />
+                  <PropertyValueFactory property="odemeterReading" />
             </cellValueFactory>
           </TableColumn>
-            <TableColumn prefWidth="96.0" text="Total Services">
+            <TableColumn fx:id="Tank" prefWidth="98.0" text="Tank Capacity">
             <cellValueFactory>
-                  <PropertyValueFactory property="totalServices" />
+                  <PropertyValueFactory property="tankCapacity" />
             </cellValueFactory>
           </TableColumn>
-            <TableColumn prefWidth="109.0" text="Requires Service">
+            <TableColumn fx:id="ServiceCount" prefWidth="103.0" text="Service Count">
             <cellValueFactory>
-                  <PropertyValueFactory property="requiresService" />
+                  <PropertyValueFactory property="servCount" />
+            </cellValueFactory>
+          </TableColumn>
+            <TableColumn fx:id="RequiresService" prefWidth="108.0" text="Requires Service">
+            <cellValueFactory>
+                  <PropertyValueFactory property="reqService" />
             </cellValueFactory>
           </TableColumn>
         </columns>
       </TableView>
-      <Button fx:id="btnAdd" layoutX="14.0" layoutY="453.0" mnemonicParsing="false" onAction="#addCar" prefHeight="25.0" prefWidth="44.0" text="Add" />
-      <Button fx:id="btnRent" layoutX="528.0" layoutY="453.0" mnemonicParsing="false" onAction="#rentCar" prefHeight="25.0" prefWidth="69.0" text="Rent" />
+      <Button fx:id="btnRent" layoutX="732.0" layoutY="548.0" mnemonicParsing="false" onAction="#rentCar" prefHeight="25.0" prefWidth="89.0" text="Rent Vehicle" />
       <Label layoutX="14.0" layoutY="14.0" prefHeight="55.0" prefWidth="216.0" text="Car Rental Service">
          <font>
             <Font name="Calibri" size="28.0" />
          </font>
       </Label>
-      <TextField fx:id="regNoField" layoutX="172.0" layoutY="478.0" promptText="Registration No" />
-      <TextField fx:id="totalKmField" layoutX="329.0" layoutY="478.0" promptText="Total Km Travelled" />
-      <TextField fx:id="vehicleField" layoutX="14.0" layoutY="478.0" prefHeight="25.0" prefWidth="149.0" promptText="Vehicle" />
-      <TextField fx:id="totalSerField" layoutX="14.0" layoutY="511.0" promptText="Total Services" />
-      <TextField fx:id="requiresSerField" layoutX="172.0" layoutY="511.0" promptText="Requires Service" />
+      <TextField fx:id="manufacurerField" layoutX="14.0" layoutY="478.0" promptText="Manufacturer" />
+      <TextField fx:id="modelField" layoutX="172.0" layoutY="478.0" promptText="Model" />
+      <TextField fx:id="yearField" layoutX="329.0" layoutY="478.0" promptText="Year" />
+      <TextField fx:id="regNoField" layoutX="486.0" layoutY="478.0" promptText="Registration Number" />
+      <TextField fx:id="odemeterField" layoutX="14.0" layoutY="517.0" promptText="Odemeter Reading" />
+      <TextField fx:id="tankField" layoutX="172.0" layoutY="517.0" promptText="Tank Capacity" />
+      <Button layoutX="644.0" layoutY="548.0" mnemonicParsing="false" onAction="#addCar" text="Add Vehicle" />
+      <TextField fx:id="requiresServField" layoutX="329.0" layoutY="517.0" promptText="Requires Service" />
     </children>
 </AnchorPane>

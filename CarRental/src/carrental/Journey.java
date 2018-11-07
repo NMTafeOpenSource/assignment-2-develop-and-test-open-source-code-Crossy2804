@@ -20,8 +20,6 @@ public class Journey {
 		this.kilometers += kilometers;
 	}
 
-
-
 	/**
 	 * Getter method for total Kilometers traveled in this journey.
 	 * @return {@link #kilometers}

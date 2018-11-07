@@ -9,70 +9,109 @@ import javafx.beans.property.SimpleStringProperty;
  *
  * @author 20002104
  */
-public class Vehicles implements Comparable<Vehicles>{
-    private final SimpleStringProperty vehicle = new SimpleStringProperty("");
-    private final SimpleStringProperty registrationNo = new SimpleStringProperty("");
-    private final SimpleStringProperty totalKm = new SimpleStringProperty("");
-    private final SimpleStringProperty totalServices = new SimpleStringProperty("");
-    private final SimpleStringProperty requiresService = new SimpleStringProperty("");
+public class Vehicles {
+    private String manufacturer;
+    private String model;
+    private int year;
+    private String registrationNo;
+    private double odemeterReading;
+    private int tankCapacity;
+    private String requiresService;
+    private double revenue;
+
+    public FuelPurchase fuel = new FuelPurchase();
+    public Service serv = new Service();
     
-    public Vehicles() {
-        this("","","","","");
-    }
-    public Vehicles(String vehicle, String registrationNo, String totalKm, String totalServices, String requiresService) {
-        setVehicle(vehicle);
+    public Vehicles(String manufacturer, String model, int year, String registrationNo, double odemeterReading,
+                    int tankCapacity, int lastServKM, String date, int servCount, String reqService, double fuelEco, double revenue) {
+        setManufacturer(manufacturer);
+        setModel(model);
+        setYear(year);
         setRegistrationNo(registrationNo);
-        setTotalKm(totalKm);
-        setTotalServices(totalServices);
-        setRequiresService(requiresService);
+        setOdemeterReading(odemeterReading);
+        setTankCapacity(tankCapacity);
+        serv.recordService(lastServKM, date);
+        serv.serviceCount = servCount;
+        setRequiresService (reqService);
+        fuel.setFuelEconomy(fuelEco);
+        setRevenue(revenue);
     }
-     public SimpleStringProperty vehicleProperty() {
-        return vehicle;
+    
+    public String setManufacturer(){
+    return this.manufacturer;
     }
+    
+    public void setManufacturer(String Vmanufacturer){
+    this.manufacturer = Vmanufacturer;
+    }
+    
+    public String setModel(){
+    return this.model;
+    }
+    
+    public void setModel(String Vmodel){
+    this.model = Vmodel;
+    }
+    
+    public int setYear(){
+    return this.year;
+    }
+    
+    public void setYear(int Vyear){
+    this.year = Vyear;
+    }
+    
+    public String setRegistrationNo(){
+    return this.registrationNo;
+    }
+    
+    public void setRegistrationNo(String VregNo){
+    this.registrationNo = VregNo;
+    }
+    
+    public double setOdemeterReading(){
+    return this.odemeterReading;
+    }
+    
+    public void setOdemeterReading(double Vodemeter){
+    this.odemeterReading = Vodemeter;
+    }
+    
+    public int setTankCapacity(){
+    return this.tankCapacity;
+    }
+    
+    public void setTankCapacity(int Vtank){
+    this.tankCapacity = Vtank;
+    }
+    
+    public String setRequiresService(){
+    return this.requiresService;
+    }
+    
+    public void setRequiresService(String VreqServ){
+    this.requiresService = VreqServ;
+    }
+    
+    public double setRevenue(){
+    return this.revenue;
+    }
+    
+    public void setRevenue(double Vrev){
+    this.revenue = Vrev;
+    }
+    
+    public void printDetails() {
+		System.out.println("Vehicle: " + registrationNo + " " + year + " " + manufacturer + " " + model);		
+                // TODO Display additional information about this vehicle
+	}
 
-    public SimpleStringProperty registrationNoProperty() {
-        return registrationNo;
-    }
+        public void addKilometers(int totalKm){
+        this.odemeterReading += totalKm;
+        }
 
-    public SimpleStringProperty totalKmProperty() {
-        return totalKm;
-    }
-    
-    public SimpleStringProperty totalServicesProperty() {
-        return totalServices;
-    }
-    
-    public SimpleStringProperty requiresServiceProperty() {
-        return requiresService;
-    }
-    
-     public void setVehicle(String vehicles) {
-        vehicle.set(vehicles);
-    }
-
-    public void setRegistrationNo(String regNo) {
-        registrationNo.set(regNo);
-    }
-
-    public void setTotalKm(String totalKms) {
-        totalKm.set(totalKms);
-    }
-    
-    public void setTotalServices(String services) {
-        totalServices.set(services);
-    }
-    
-    public void setRequiresService(String required) {
-        requiresService.set(required);
-    }
-    
-    
-     @Override
-    public int compareTo(Vehicles v) {
-       String name = vehicle.getName();
-       if(v!=null)
-           return name.compareTo(v.vehicle.toString());
-       else
-           return 1;
-    }  
+        // adds fuel to the car
+        public void addFuel(double litres, double price){            
+            fuel.purchaseFuel(litres, price);
+        }        
 }

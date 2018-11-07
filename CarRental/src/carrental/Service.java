@@ -5,9 +5,9 @@ public class Service {
     // Constant to indicate that the vehicle needs to be serviced every 10,000km
     public static final int SERVICE_KILOMETER_LIMIT = 10000;
     
-    private int lastServiceOdometerKm=0;
-    private int serviceCount=0;
-    // TODO add lastServiceDate
+    public int lastServiceOdometerKm=0;
+    public int serviceCount=0;
+    public String lastServiceDate="No Date";
     
     // return the last service
     public int getLastServiceOdometerKm()
@@ -20,16 +20,21 @@ public class Service {
      * saves it and increase serviceCount.
      * @param distance 
      */
-    public void recordService(int distance)
+    public void recordService(int distance, String date)
     {
         this.lastServiceOdometerKm = distance;
         this.serviceCount ++;
+        this.lastServiceDate = date;
     }
     
     // return how many services the car has had
     public int getServiceCount()
     {
         return this.serviceCount;
+    }
+    
+    public String getServiceDate(){
+    return this.lastServiceDate;
     }
     
     /**
