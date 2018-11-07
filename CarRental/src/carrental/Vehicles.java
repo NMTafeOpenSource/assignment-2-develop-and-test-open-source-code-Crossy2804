@@ -23,21 +23,21 @@ public class Vehicles {
     public Service serv = new Service();
     
     public Vehicles(String manufacturer, String model, int year, String registrationNo, double odemeterReading,
-                    int tankCapacity, int lastServKM, String date, int servCount, String reqService, double fuelEco, double revenue) {
+                    int tankCapacity, int servCount, String reqService, int lastServKM, String date, double fuelEco, double revenue) {
         setManufacturer(manufacturer);
         setModel(model);
         setYear(year);
         setRegistrationNo(registrationNo);
         setOdemeterReading(odemeterReading);
         setTankCapacity(tankCapacity);
-        serv.recordService(lastServKM, date);
         serv.serviceCount = servCount;
         setRequiresService (reqService);
+        serv.recordService(lastServKM, date);
         fuel.setFuelEconomy(fuelEco);
         setRevenue(revenue);
     }
     
-    public String setManufacturer(){
+    public String getManufacturer(){
     return this.manufacturer;
     }
     
@@ -45,7 +45,7 @@ public class Vehicles {
     this.manufacturer = Vmanufacturer;
     }
     
-    public String setModel(){
+    public String getModel(){
     return this.model;
     }
     
@@ -53,7 +53,7 @@ public class Vehicles {
     this.model = Vmodel;
     }
     
-    public int setYear(){
+    public int getYear(){
     return this.year;
     }
     
@@ -61,7 +61,7 @@ public class Vehicles {
     this.year = Vyear;
     }
     
-    public String setRegistrationNo(){
+    public String getRegistrationNo(){
     return this.registrationNo;
     }
     
@@ -69,7 +69,7 @@ public class Vehicles {
     this.registrationNo = VregNo;
     }
     
-    public double setOdemeterReading(){
+    public double getOdemeterReading(){
     return this.odemeterReading;
     }
     
@@ -77,7 +77,7 @@ public class Vehicles {
     this.odemeterReading = Vodemeter;
     }
     
-    public int setTankCapacity(){
+    public int getTankCapacity(){
     return this.tankCapacity;
     }
     
@@ -85,7 +85,7 @@ public class Vehicles {
     this.tankCapacity = Vtank;
     }
     
-    public String setRequiresService(){
+    public String getRequiresService(){
     return this.requiresService;
     }
     
@@ -93,7 +93,7 @@ public class Vehicles {
     this.requiresService = VreqServ;
     }
     
-    public double setRevenue(){
+    public double getRevenue(){
     return this.revenue;
     }
     

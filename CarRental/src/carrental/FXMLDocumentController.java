@@ -22,6 +22,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javax.swing.JOptionPane;
 /**
  *
@@ -46,10 +47,6 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TableColumn<Vehicles, Integer> Tank;
     @FXML
-    private TableColumn<Vehicles, Integer> ServiceCount;
-    @FXML
-    private TableColumn<Vehicles, String> RequiresService;
-    @FXML
     private TextField manufacurerField;
     @FXML
     private TextField modelField;
@@ -63,13 +60,22 @@ public class FXMLDocumentController implements Initializable {
     private TextField tankField;
     @FXML
     private TextField requiresServField;
+    @FXML
+    private TextField lastServiceKMField;
+    @FXML
+    private TextField serviceDateField;
+    @FXML
+    private TextField serviceCountField;
+    @FXML
+    private TextField fuelEcoField;
+    @FXML
+    private TextField revField;
     
     public ArrayList<Vehicles> carList = new ArrayList<>();
     
     Service serv = new Service();
     RentalCost rent = new RentalCost();
     FuelPurchase fuelP = new FuelPurchase();
-   
     
     /**
      * this read the vehicles in the text file and places them into the table
@@ -90,23 +96,23 @@ public class FXMLDocumentController implements Initializable {
                 String registrationNo = inFile.next();
                 double odemeterReading = Double.parseDouble(inFile.next());
                 int tankCapacity = Integer.parseInt(inFile.next());
-                int lastServKM = Integer.parseInt(inFile.next());
-                String date = inFile.next();
                 int servCount = Integer.parseInt(inFile.next());
-                String reqService = inFile.next();       
+                String reqService = inFile.next();
+                int lastServKM = Integer.parseInt(inFile.next());
+                String date = inFile.next();       
                 double fuelEco = Double.parseDouble(inFile.next());
                 double revenue = Double.parseDouble(inFile.next());
               
                 carList.add(new Vehicles(manufacturer, model, year, registrationNo, odemeterReading, tankCapacity,
-                                         lastServKM, date, servCount, reqService, fuelEco, revenue));
+                                         servCount, reqService, lastServKM, date, fuelEco, revenue));
             }
         }
         catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "File not found");
         } 
         
-        ObservableList<Vehicles> vehicleList = FXCollections.observableArrayList(carList);
-        vehicleTable.setItems(vehicleList);
+        ObservableList<Vehicles> vehicles = FXCollections.observableArrayList(carList);        
+        vehicleTable.setItems(vehicles);
     }    
     /**
      * this tells the user the car has been rented and prints a receipt out
@@ -115,6 +121,7 @@ public class FXMLDocumentController implements Initializable {
      */
     @FXML
     private void rentCar(ActionEvent event) {
+        
         JOptionPane.showMessageDialog(null, "Rent order has been sent");
     }
 /**
@@ -124,7 +131,36 @@ public class FXMLDocumentController implements Initializable {
  */
     @FXML
     private void addCar(ActionEvent event) {
-       
+            carList.add(new Vehicles(
+            manufacurerField.getText(),
+            modelField.getText(),
+            Integer.parseInt(yearField.getText()),
+            regNoField.getText(),
+            Double.parseDouble(odemeterField.getText()),
+            Integer.parseInt(tankField.getText()),
+            Integer.parseInt(serviceCountField.getText()),
+            requiresServField.getText(),
+            Integer.parseInt(lastServiceKMField.getText()),
+            serviceDateField.getText(),
+            Double.parseDouble(fuelEcoField.getText()),
+            Double.parseDouble(revField.getText())
+        ));
+        
+        ObservableList<Vehicles> vehicles = FXCollections.observableArrayList(carList);
+        vehicleTable.setItems(vehicles);
+        
+            manufacurerField.setText("");
+            modelField.setText("");
+            yearField.setText("");
+            regNoField.setText("");
+            odemeterField.setText("");
+            tankField.setText("");
+            lastServiceKMField.setText("");
+            serviceDateField.setText("");
+            serviceCountField.setText("");
+            requiresServField.setText("");
+            fuelEcoField.setText("");
+            revField.setText("");
     }
     
 }

@@ -10,5 +10,11 @@ package carrental;
  * @author 20002104
  */
 public class RentalCost {
+    private double days = 100;
+    private double km = 1;
+    private double amount;
+    private double total;
+    
+    
     
 }
