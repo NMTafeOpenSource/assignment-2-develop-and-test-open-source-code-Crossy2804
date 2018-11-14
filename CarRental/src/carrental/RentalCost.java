@@ -11,10 +11,27 @@ package carrental;
  */
 public class RentalCost {
     private double days = 100;
-    private double km = 1;
+    private double km = 1.50;
     private double amount;
-    private double total;
     
+    public double getamount(){
+    return this.amount;
+    }
     
+    public void setamount(double vAmount){
+    this.amount = vAmount;
+    }
+    
+    public double getRentDayCost(){
+    return amount * days;
+    }
+    
+    public double getRentKmCost(){
+    return amount * km;
+    }
+    
+    public double getTotal(double vmade){
+    return vmade += amount;
+    }
     
 }

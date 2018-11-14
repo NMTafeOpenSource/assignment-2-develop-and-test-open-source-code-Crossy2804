@@ -100,11 +100,6 @@ public class Vehicles {
     public void setRevenue(double Vrev){
     this.revenue = Vrev;
     }
-    
-    public void printDetails() {
-		System.out.println("Vehicle: " + registrationNo + " " + year + " " + manufacturer + " " + model);		
-                // TODO Display additional information about this vehicle
-	}
 
         public void addKilometers(int totalKm){
         this.odemeterReading += totalKm;

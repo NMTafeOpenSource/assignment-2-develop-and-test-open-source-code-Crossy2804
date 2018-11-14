@@ -13,8 +13,17 @@ public class Service {
     public int getLastServiceOdometerKm()
     {
         return this.lastServiceOdometerKm;
-    }    
+    }  
     
+    // return how many services the car has had
+    public int getServiceCount()
+    {
+        return this.serviceCount;
+    }
+    
+    public String getServiceDate(){
+    return this.lastServiceDate;
+    }
     /**
      * The function recordService expects the total distance traveled by the car, 
      * saves it and increase serviceCount.
@@ -27,15 +36,7 @@ public class Service {
         this.lastServiceDate = date;
     }
     
-    // return how many services the car has had
-    public int getServiceCount()
-    {
-        return this.serviceCount;
-    }
     
-    public String getServiceDate(){
-    return this.lastServiceDate;
-    }
     
     /**
      * Calculates the total services by dividing kilometers by

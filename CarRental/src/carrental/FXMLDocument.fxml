@@ -4,12 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="575.0" prefWidth="836.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carrental.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="676.0" prefWidth="836.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carrental.FXMLDocumentController">
     <children>
       <TableView fx:id="vehicleTable" layoutX="14.0" layoutY="89.0" prefHeight="436.0" prefWidth="583.0">
         <columns>
@@ -45,7 +46,7 @@
           </TableColumn>
         </columns>
       </TableView>
-      <Button fx:id="btnRent" layoutX="14.0" layoutY="535.0" mnemonicParsing="false" onAction="#rentCar" prefHeight="25.0" prefWidth="89.0" text="Rent Vehicle" />
+      <Button fx:id="btnRentDay" layoutX="11.0" layoutY="637.0" mnemonicParsing="false" onAction="#RentByDay" prefHeight="25.0" prefWidth="89.0" text="Rent by Day" />
       <Label layoutX="14.0" layoutY="14.0" prefHeight="55.0" prefWidth="216.0" text="Car Rental Service">
          <font>
             <Font name="Calibri" size="28.0" />
@@ -57,16 +58,26 @@
       <TextField fx:id="regNoField" layoutX="673.0" layoutY="164.0" promptText="Registration Number" />
       <TextField fx:id="odemeterField" layoutX="673.0" layoutY="189.0" promptText="Odemeter Reading" />
       <TextField fx:id="tankField" layoutX="673.0" layoutY="214.0" promptText="Tank Capacity" />
-      <Button layoutX="733.0" layoutY="401.0" mnemonicParsing="false" onAction="#addCar" prefHeight="25.0" prefWidth="89.0" text="Add Vehicle" />
+      <Button layoutX="733.0" layoutY="388.0" mnemonicParsing="false" onAction="#addCar" prefHeight="25.0" prefWidth="89.0" text="Add Vehicle" />
       <TextField fx:id="requiresServField" layoutX="673.0" layoutY="313.0" promptText="Requires Service" />
       <TextField fx:id="lastServiceKMField" layoutX="673.0" layoutY="239.0" promptText="Km since last service" />
       <TextField fx:id="serviceDateField" layoutX="673.0" layoutY="264.0" promptText="Date of last service" />
       <TextField fx:id="serviceCountField" layoutX="673.0" layoutY="288.0" promptText="Service Count" />
       <TextField fx:id="fuelEcoField" layoutX="673.0" layoutY="338.0" promptText="Fuel Economy" />
-      <TextField fx:id="revField" layoutX="673.0" layoutY="363.0" promptText="Revenue" />
       <Label layoutX="707.0" layoutY="51.0" prefHeight="36.0" prefWidth="115.0" text="Add New Vehicle">
          <font>
             <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnDetails" layoutX="14.0" layoutY="525.0" mnemonicParsing="false" onAction="#viewDetails" prefHeight="25.0" prefWidth="82.0" text="View Details" />
+      <TextField fx:id="numDaysField" layoutX="100.0" layoutY="637.0" prefHeight="25.0" prefWidth="89.0" promptText="Num of Days" />
+      <TextField fx:id="kmField" layoutX="306.0" layoutY="637.0" prefHeight="25.0" prefWidth="99.0" promptText="Num of Kms" />
+      <Button fx:id="btnRentKm" layoutX="217.0" layoutY="637.0" mnemonicParsing="false" onAction="#RentByKm" prefHeight="25.0" prefWidth="89.0" text="Rent by Kms" />
+      <TextArea fx:id="txtcarDetail" layoutX="622.0" layoutY="422.0" prefHeight="240.0" prefWidth="200.0" />
+      <TextField fx:id="revField" layoutX="673.0" layoutY="363.0" promptText="Revenue" />
+      <Label layoutX="14.0" layoutY="593.0" prefHeight="36.0" prefWidth="226.0" text="Rent: $100 per Day or $1.50 per Km">
+         <font>
+            <Font size="13.0" />
          </font>
       </Label>
     </children>
