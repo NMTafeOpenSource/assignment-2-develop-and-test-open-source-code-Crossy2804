@@ -101,14 +101,5 @@ public class Vehicles {
     
     public void setRevenue(double Vrev){
     this.revenue = Vrev;
-    }
-
-        public void addKilometers(int totalKm){
-        this.odemeterReading += totalKm;
-        }
-
-        // adds fuel to the car
-        public void addFuel(double litres, double price){            
-            fuel.purchaseFuel(litres, price);
-        }        
+    }     
 }
