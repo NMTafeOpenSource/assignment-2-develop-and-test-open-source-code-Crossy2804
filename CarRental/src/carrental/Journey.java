@@ -3,7 +3,7 @@ package carrental;
  
 public class Journey {
 	
-	private double kilometers;
+	public double kilometers;
 
 	/**
 	 * Class constructor

@@ -23,7 +23,7 @@ public class Vehicles {
     public Service serv = new Service();
     
     public Vehicles(String manufacturer, String model, int year, String registrationNo, double odemeterReading,
-                    int tankCapacity, int servCount, String reqService, int lastServKM, String date, double fuelEco, double revenue) {
+                    int tankCapacity, int servCount, String reqService, int lastServKM, String date, double fuelEco, double liters, double cost, double revenue) {
         setManufacturer(manufacturer);
         setModel(model);
         setYear(year);
@@ -34,6 +34,8 @@ public class Vehicles {
         setRequiresService (reqService);
         serv.recordService(lastServKM, date);
         fuel.setFuelEconomy(fuelEco);
+        fuel.setFuel(liters);
+        fuel.setCost(cost);
         setRevenue(revenue);
     }
     

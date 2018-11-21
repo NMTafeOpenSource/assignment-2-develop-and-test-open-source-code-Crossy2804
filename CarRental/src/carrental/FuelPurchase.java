@@ -13,7 +13,19 @@ public class FuelPurchase {
         public double getFuel(){
             return this.litres;
         }
-
+        
+        public void setFuel(double vLitres) {
+		this.litres = vLitres;
+	}
+        
+        public double getCost(){
+            return this.cost;
+        }
+        
+        public void setCost(double vCost) {
+		this.cost = vCost;
+	}
+        
 	public void setFuelEconomy(double fuelEconomy) {
 		this.fuelEconomy = fuelEconomy;
 	}

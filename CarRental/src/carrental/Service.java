@@ -15,6 +15,10 @@ public class Service {
         return this.lastServiceOdometerKm;
     }  
     
+    public void setLastServiceOdometerKm(int vOdometerKm){
+        this.lastServiceOdometerKm = vOdometerKm;
+    }
+    
     // return how many services the car has had
     public int getServiceCount()
     {
@@ -35,9 +39,6 @@ public class Service {
         this.serviceCount ++;
         this.lastServiceDate = date;
     }
-    
-    
-    
     /**
      * Calculates the total services by dividing kilometers by
      * {@link #SERVICE_KILOMETER_LIMIT} and floors the value. 
