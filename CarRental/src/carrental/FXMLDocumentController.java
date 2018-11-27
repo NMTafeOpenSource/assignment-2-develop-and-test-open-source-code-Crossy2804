@@ -87,8 +87,9 @@ public class FXMLDocumentController implements Initializable {
     private Button btnDelete;
     @FXML
     private TextField litresField;
-    @FXML
     private TextField fuelCostField;   
+    @FXML
+    private TextField fuelPurchaseField;
     
     public ArrayList<Vehicles> carList = new ArrayList<>();
     
@@ -124,12 +125,10 @@ public class FXMLDocumentController implements Initializable {
                 fuel.setFuelEconomy(fuelEco);
                 double liters = Double.parseDouble(inFile.next());
                 fuel.setFuel(liters);
-                double cost = Double.parseDouble(inFile.next());
-                fuel.setCost(cost);
                 double revenue = Double.parseDouble(inFile.next());
               
                 carList.add(new Vehicles(manufacturer, model, year, registrationNo, odemeterReading, tankCapacity,
-                                         servCount, reqService, lastServKM, date, fuelEco, liters, cost, revenue));
+                                         servCount, reqService, lastServKM, date, fuelEco, liters, revenue));
             }
         }
         catch (FileNotFoundException ex) {
@@ -161,13 +160,11 @@ public class FXMLDocumentController implements Initializable {
             double fuelEco = Double.parseDouble(fuelEcoField.getText());
             fuel.setFuelEconomy(fuelEco);
             double liters = Double.parseDouble(litresField.getText());
-            fuel.setFuel(Double.parseDouble(rentalCostField.getText()));
-            double cost = Double.parseDouble(fuelCostField.getText());
-            fuel.setCost(Double.parseDouble(fuelCostField.getText()));
+            fuel.setFuel(liters);
             double revenue = Double.parseDouble(revField.getText());
                     
                  carList.add(new Vehicles(manufacturer, model, year, registrationNo, odemeterReading, tankCapacity,
-                                         servCount, reqService, lastServKM, date, fuelEco, liters, cost, revenue));
+                                         servCount, reqService, lastServKM, date, fuelEco, liters, revenue));
         manufacurerField.clear();
         modelField.clear();
         yearField.clear();   
@@ -180,7 +177,6 @@ public class FXMLDocumentController implements Initializable {
         serviceDateField.clear();
         fuelEcoField.clear();
         litresField.clear();
-        fuelCostField.clear();
         revField.clear();
                 
         ObservableList<Vehicles> vehicles = FXCollections.observableArrayList(carList);
@@ -195,6 +191,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void RentByDay(ActionEvent event) throws FileNotFoundException {
         rent.setamount(Double.parseDouble(rentalCostField.getText()));
+        fuel.setPurchaseFuel(Double.parseDouble(fuelPurchaseField.getText()));
         WriteFileDays();
         JOptionPane.showMessageDialog(null, "Receipt has been printed");
     }
@@ -206,6 +203,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void RentByKm(ActionEvent event) throws FileNotFoundException {
         rent.setamount(Double.parseDouble(rentalCostField.getText()));
+        fuel.setPurchaseFuel(Double.parseDouble(fuelPurchaseField.getText()));
         WriteFileKm();
        JOptionPane.showMessageDialog(null, "Receipt has been printed");
     }
@@ -234,10 +232,11 @@ public class FXMLDocumentController implements Initializable {
             writer.println("Date of Last Service: " + carList.get(i).serv.getServiceDate());
             writer.println("Fuel Economy: " + carList.get(i).fuel.getFuelEconomy());
             writer.println("Level of Fuel: " + carList.get(i).fuel.getFuel());
-            writer.println("Cost of Fuel: " + carList.get(i).fuel.getCost());
+            writer.println("Litres Purchased: " + fuel.getPurchaseFuel());
             writer.println("Revenue: " + carList.get(i).getRevenue());
             writer.println(" ");
             writer.println("Rental Cost: $" + rent.getRentKmCost());
+            writer.println("Fuel Cost: $" + fuel.getFuelCost());
             writer.println("--------------------------");
             writer.println("PLEASE RETAIN FOR YOUR RECORD");
             writer.println("THANK YOU FOR RENTING WITH US");
@@ -268,10 +267,11 @@ public class FXMLDocumentController implements Initializable {
             writer.println("Date of Last Service: " + carList.get(i).serv.getServiceDate());
             writer.println("Fuel Economy: " + carList.get(i).fuel.getFuelEconomy());
             writer.println("Level of Fuel: " + carList.get(i).fuel.getFuel());
-            writer.println("Cost of Fuel: " + carList.get(i).fuel.getCost());
+            writer.println("Litres Purchased: " + fuel.getPurchaseFuel());
             writer.println("Revenue: " + carList.get(i).getRevenue());
             writer.println(" ");
             writer.println("Rental Cost: $" + rent.getRentDayCost());
+            writer.println("Fuel Cost: $" + fuel.getFuelCost());
             writer.println("--------------------------");
             writer.println("PLEASE RETAIN FOR YOUR RECORD");
             writer.println("THANK YOU FOR RENTING WITH US");

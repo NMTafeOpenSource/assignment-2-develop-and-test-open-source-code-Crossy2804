@@ -13,10 +13,11 @@ Last Service Km: 739
 Date of Last Service: 20/03/2016
 Fuel Economy: 7.0
 Level of Fuel: 50.0
-Cost of Fuel: 2.0
+Litres Purchased: 0.0
 Revenue: 5892.0
  
-Rental Cost: $7600.0
+Rental Cost: $500.0
+Fuel Cost: $0.0
 --------------------------
 PLEASE RETAIN FOR YOUR RECORD
 THANK YOU FOR RENTING WITH US
