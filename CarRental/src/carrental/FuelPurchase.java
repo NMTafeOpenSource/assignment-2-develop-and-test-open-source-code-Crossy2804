@@ -39,6 +39,10 @@ public class FuelPurchase {
         return purchaseFuel * cost;
         }
         
+        public static double FuelCost(double purchaseFuel, double cost){
+        return purchaseFuel * cost;
+        }
+        
 	public void setFuelEconomy(double fuelEconomy) {
 		this.fuelEconomy = fuelEconomy;
 	}

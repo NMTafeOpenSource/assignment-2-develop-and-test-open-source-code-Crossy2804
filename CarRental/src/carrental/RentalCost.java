@@ -22,7 +22,7 @@ public class RentalCost {
     this.amount = vAmount;
     }
     
-    public double getRentDayCost(){
+    public  double getRentDayCost(){
     return amount * days;
     }
     
@@ -32,6 +32,14 @@ public class RentalCost {
     
     public double getTotal(double vmade){
     return vmade += amount;
+    }
+    
+    public static double RentKmCost(double amount, double km){
+    return amount * km;
+    }
+    
+    public  static double RentDayCost(double amount, double days){
+    return amount * days;
     }
     
 }

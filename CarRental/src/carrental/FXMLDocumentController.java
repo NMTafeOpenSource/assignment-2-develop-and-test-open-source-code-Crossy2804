@@ -233,7 +233,7 @@ public class FXMLDocumentController implements Initializable {
             writer.println("Fuel Economy: " + carList.get(i).fuel.getFuelEconomy());
             writer.println("Level of Fuel: " + carList.get(i).fuel.getFuel());
             writer.println("Litres Purchased: " + fuel.getPurchaseFuel());
-            writer.println("Revenue: " + carList.get(i).getRevenue());
+            writer.println("Revenue: $" + carList.get(i).getRevenue());
             writer.println(" ");
             writer.println("Rental Cost: $" + rent.getRentKmCost());
             writer.println("Fuel Cost: $" + fuel.getFuelCost());
@@ -268,7 +268,7 @@ public class FXMLDocumentController implements Initializable {
             writer.println("Fuel Economy: " + carList.get(i).fuel.getFuelEconomy());
             writer.println("Level of Fuel: " + carList.get(i).fuel.getFuel());
             writer.println("Litres Purchased: " + fuel.getPurchaseFuel());
-            writer.println("Revenue: " + carList.get(i).getRevenue());
+            writer.println("Revenue: $" + carList.get(i).getRevenue());
             writer.println(" ");
             writer.println("Rental Cost: $" + rent.getRentDayCost());
             writer.println("Fuel Cost: $" + fuel.getFuelCost());
