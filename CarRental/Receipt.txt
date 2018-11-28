@@ -1,0 +1,23 @@
+CUSTOMER COPY
+CAR RENTAL RECEIPT
+--------------------------
+Manufacturer: Chevrolet
+Model: Impala
+Year: 1967
+Registration No: DJ48GHN
+Odemeter Reading: 4752.0
+Tank Capacity: 50
+Service Count: 2
+Requires Service: Yes
+Last Service Km: 739
+Date of Last Service: 20/03/2016
+Fuel Economy: 7.0
+Level of Fuel: 50.0
+Litres Purchased: 0.0
+Revenue: $5892.0
+ 
+Rental Cost: $2000.0
+Fuel Cost: $0.0
+--------------------------
+PLEASE RETAIN FOR YOUR RECORD
+THANK YOU FOR RENTING WITH US
